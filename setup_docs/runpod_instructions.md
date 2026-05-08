@@ -36,6 +36,9 @@ Here, you can paste in your copied public key in the raw editor as shown. Specif
 
 If you're curious, the container start command reads through all environment variables with names of the form `PUBLIC_KEY_{.*}` and writes them into `~/.ssh/authorized_keys`, which is what allows your machine to SSH in without a password.
 
+4. To work with your Github account on the pod, we've setup a somewhat streamlined way to do so by securely using encrypted private keys. First, go ahead and run `./register_runpod_key.sh` and follow the instructions. Copy your `ENCRYPTED_PRIVATE_KEY_{id}` and paste it in the environment variable raw editor (as you did already before). **Note that directly sharing your private key would allow anyone to impersonate your GitHub account! The encryption used in this method keeps both your private key and password anonymous (for reasonably secure passwords, e.g. don't use `123` as a password).**
+
+
 # Step 2. Deploying a Runpod
 
 1. Set up a pod on [runpod.io](https://runpod.io). Deploy using the **Humanoid-Dev-GUI** template. These images tell you how:
@@ -60,10 +63,13 @@ Finally, choose a memory mode. *This step will be elaborated later.* For now, ch
 ![Deploy configure storage](images/deploy-temp-storage.png)
 
 
-
 2. You can now set up a remote interactive GUI window to visualize simulations and more. Once the pod is running,  open an interactive web terminal:
 
 ![Pod selection](images/pod-select.png)
+
+Ignore the SSH public key warning, Runpod's solution is sloppy like fish; we have our own solution.
+
+![Pod enable webterm](images/pod-ignore-keygen.png)
 
 ![Pod enable webterm](images/pod-enable-webterm.png)
 
@@ -96,11 +102,24 @@ The default password should be simple and rememberable: `123123`
 
 ![Pod vnc password](images/pod-vnc-password.png)
 
+You can now navigate the pod like you would a laptop! For example, you can open the terminal via the top left navigation bar. A good first check is launching `isaacsim` in the VNC terminal to confirm the GUI and GPU are working.
+
+![VNC term and sim](images/vnc-open-isaac.png)
+
+**Note: ** clipboards are not shared between the GUI site and your computer. To paste into the pod, use the clipboard icon on the right to shovel in the desired content; then right-click paste bam.
+
+![VNC pasting](images/vnc-pasting.png)
+
+For the reverse, highlight the portion to copy in the GUI; the text will show up in the clipboard widget.
+
+![VNC copying](images/vnc-copying.png)
+
+4. If you are working with GitHub, which you likely will for working on project repositories, make sure you run `./login.sh` (or absolute path `/workspace/login.sh`) to use your encrypted private key.
+
+
 ---
 
 ## Smoke Tests
-
-A good first check is launching `isaacsim` in the VNC terminal to confirm the GUI and GPU are working.
 
 ~~You can also run a random agent on the cartpole balancing task to verify that physics simulation and 3D geometry load correctly:~~ Not really working right now, TODO
 
