@@ -1,8 +1,11 @@
 [submodule "projects/hover"]
 	path = projects/hover
-	url = https://github.com/kylevansant/HOVER.git
-	branch = kylevansant
+	url = git@github.com:Humanoid-Athletic-Robotics-Project-HARP/HOVER.git
+	branch = main
 [submodule "projects/him-collaborators"]
 	path = projects/him-collaborators
-	url = https://github.com/HIMRobotics/him-collaborators.git
+	url = git@github.com:HIMRobotics/him-collaborators.git
 	branch = main
+[submodule "projects/booster_robotics_sdk"]
+	path = projects/booster_robotics_sdk
+	url = https://github.com/BoosterRobotics/booster_robotics_sdk
