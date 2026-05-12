@@ -1,7 +1,7 @@
 [submodule "projects/hover"]
 	path = projects/hover
 	url = git@github.com:Humanoid-Athletic-Robotics-Project-HARP/HOVER.git
-	branch = main
+	branch = k1_retargeting_rbhowmik
 [submodule "projects/him-collaborators"]
 	path = projects/him-collaborators
 	url = git@github.com:HIMRobotics/him-collaborators.git
