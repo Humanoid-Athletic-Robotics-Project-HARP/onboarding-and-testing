@@ -8,4 +8,4 @@
 	branch = main
 [submodule "projects/booster_robotics_sdk"]
 	path = projects/booster_robotics_sdk
-	url = https://github.com/BoosterRobotics/booster_robotics_sdk
+	url = git@github.com:BoosterRobotics/booster_robotics_sdk.git
