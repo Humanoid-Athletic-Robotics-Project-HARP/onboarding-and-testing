@@ -9,3 +9,7 @@
 [submodule "projects/booster_robotics_sdk"]
 	path = projects/booster_robotics_sdk
 	url = https://github.com/BoosterRobotics/booster_robotics_sdk
+[submodule "projects/ttrl-icra2026"]
+	path = projects/ttrl-icra2026
+	url = https://github.com/purdue-tracelab/TTRL-ICRA2026.git
+	branch = main
