@@ -38,6 +38,8 @@ If you're curious, the container start command reads through all environment var
 
 4. To work with your Github account on the pod, we've setup a somewhat streamlined way to do so by securely using encrypted private keys. First, go ahead and run `./register_runpod_key.sh` and follow the instructions. Copy your `ENCRYPTED_PRIVATE_KEY_{id}` and paste it in the environment variable raw editor (as you did already before). **Note that directly sharing your private key would allow anyone to impersonate your GitHub account! The encryption used in this method keeps both your private key and password anonymous (for reasonably secure passwords, e.g. don't use `123` as a password).**
 
+   **Windows:** run the script with Bash, not PowerShell (`bash ./register_runpod_key.sh` in Git Bash, or `& 'C:\Program Files\Git\bin\bash.exe' -lc './register_runpod_key.sh'` from PowerShell). The script must use **LF** line endings; if you see `set: pipefail: invalid option name`, convert CRLF → LF (VS Code status bar, or `git add --renormalize` after `.gitattributes` marks `*.sh text eol=lf`).
+
 
 # Step 2. Deploying a Runpod
 
